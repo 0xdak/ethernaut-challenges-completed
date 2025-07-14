@@ -135,3 +135,5 @@ dist
 /temp
 
 foundry.toml
+
+lib/*
